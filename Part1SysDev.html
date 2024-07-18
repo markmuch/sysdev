@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+ <!-- getting fonts and connecting to css file -->
+    <link rel="stylesheet" type="text/css" href="code1style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  </head>
+
+<body>
+  <!-- First Card-->
+    <div id ="firstCard" class="flex-container">
+     
+    </div>
+</div>
+</body>
+<script>
+  //initializing the sampleData values
+    const firstCard = document.getElementById("firstCard")
+const sampleData = [
+  {
+    id: 1,
+    email: "george.bluth@reqres.in",
+    first_name: "George",
+    last_name: "Bluth",
+    avatar: "https://reqres.in/img/faces/1-image.jpg",
+  },
+
+];
+//Makes the function work on load
+window.addEventListener("load", loadCard);
+//Adding in the info from the sample data into the card
+function loadCard(){
+  const cardInfo = sampleData[0]
+    firstCard.innerHTML+= 
+    `<div class="avatar">
+      <img src="${cardInfo.avatar}"></img>
+     </div>
+     <div class ="info"> 
+     <div class="idNumber">#${cardInfo.id}</div>
+    <div class="name"> 
+    ${cardInfo.last_name}, ${cardInfo.first_name}
+    </div><br>
+    <a class="email" href="mailto:${cardInfo.email}">${cardInfo.email}</a>
+    </div>`
+  }
+</script>
+</html>
